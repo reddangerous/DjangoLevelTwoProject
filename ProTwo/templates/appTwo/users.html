@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Here are your users:</h1>
-    {% if users %}
-     <ol>
-         {% for person in users%}
-         <li>user Info</li>
-         <ul>
-             <li>first Name:{{ person.first_name }}</li>
-             <li>Last Name:{{ person.last_name }}</li>
-             <li>Email:{{ person.email }}
-         </ul>
-        {% endfor %}
-     </ol>
-    {% endif %}
+    <div class="container">
+
+    <h1>Please sign up here!</h1>
+    <form method="POST">
+      {{form.as_p}}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-primary" value="submit">
+      
+    </form>
+    
+    </div>
+    
   </body>
 </html>
